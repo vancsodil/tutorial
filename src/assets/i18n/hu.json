@@ -1,0 +1,8 @@
+{
+	"menu.dashboard": "műszerfal",
+	"menu.groups": "csoportok",
+	"menu.login": "bejelentkezés",
+	"menu.logout": "kijelentkezés",
+	"menu.students": "tanulók",
+	"menu.units": "területek"
+}

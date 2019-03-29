@@ -1,0 +1,11 @@
+MAIN  SITE
+
+{{ "menu" | translate }}
+
+<ul>
+    <li (click)="cl('en')">Angol</li>
+    <li (click)="cl('hu')">Magyar</li>
+    <li (click)="cl('es')">Spanoyl</li>
+</ul>
+
+<router-outlet></router-outlet>

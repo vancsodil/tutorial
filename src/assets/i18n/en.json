@@ -1,0 +1,8 @@
+{
+	"menu.dashboard": "dashboard",
+	"menu.groups": "groups",
+	"menu.login": "login",
+	"menu.logout": "logout",
+	"menu.students": "students",
+	"menu.units": "units"
+}
