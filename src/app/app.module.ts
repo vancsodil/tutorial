@@ -17,6 +17,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { UnitsComponent } from './components/units/units.component';
 import { GroupsComponent } from './components/groups/groups.component';
+import {BrowserAnimationsModule}from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { GroupsComponent } from './components/groups/groups.component';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [UserService, LoginGuard, LogoutGuard, ApiService],
   bootstrap: [AppComponent]
