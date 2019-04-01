@@ -1,6 +1,13 @@
 <p [@slidein]>
   login works!
 </p>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <input type="text" formControlName="email" />
+  <input type="text" formControlName="password"/>
+  <input type="submit" />
+</form>
 
-
-<span (click)="login()">bejelentkezés</span>
+<span *ngIf="loginForm.get('email').errors?.required">Az email cím kötelező</span>
+<span *ngIf="loginForm.get('password').errors?.required">A jelszó kötelező</span>
+<span *ngIf="loginForm.get('email').errors?.email">Az email nem megfelelő</span>
+<span *ngIf="loginFormServerError != ''">{{ loginFormServerError }}</span>

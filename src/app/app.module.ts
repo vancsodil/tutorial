@@ -18,6 +18,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { UnitsComponent } from './components/units/units.component';
 import { GroupsComponent } from './components/groups/groups.component';
 import {BrowserAnimationsModule}from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,10 @@ import {BrowserAnimationsModule}from '@angular/platform-browser/animations';
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
+    
   ],
   providers: [UserService, LoginGuard, LogoutGuard, ApiService],
   bootstrap: [AppComponent]
