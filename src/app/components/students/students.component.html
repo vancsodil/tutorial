@@ -1,3 +1,23 @@
 <p>
   students works!
 </p>
+
+<input type="text" (input)="search($event.target.value)"/>
+
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let studentColumn of studentColumns" (click)="order(studentColumn.orderable ? studentColumn.columnName : null)">{{studentColumn.name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td *ngFor="let studentColumn of studentColumns"> {{student[studentColumn.columnName]}} </td>
+    </tr>
+  </tbody>
+</table>
+
+<div>{{pagesNumber}}</div>
+
+<span *ngFor="let pageNumber of pageNumbers" (click)="changePage(pageNumber)"> {{ pageNumber + 1 }} </span>
+<span (click)="addStudent()">ADD STUDENT</span>

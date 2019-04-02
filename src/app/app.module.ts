@@ -7,7 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StudentsComponent } from './components/students/students.component';
 import { FrameComponent } from './components/frame/frame.component';
 import { LoginComponent } from './components/login/login.component';
-import { UserService } from './services/user.service';
+import { PartnerService } from './services/partner.service';
 import { LogoutGuard } from './guard/logout.guard';
 import { LoginGuard } from './guard/login.guard';
 import { ApiService } from './services/api.service';
@@ -17,8 +17,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { UnitsComponent } from './components/units/units.component';
 import { GroupsComponent } from './components/groups/groups.component';
-import {BrowserAnimationsModule}from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { StudentaddComponent } from './components/students/studentadd/studentadd.component';
+import { DomService } from './services/dom.service';
+import { ModalService } from './services/modal.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FrameComponent,
     LoginComponent,
     UnitsComponent,
-    GroupsComponent
+    GroupsComponent,
+    StudentaddComponent
   ],
   imports: [
     BrowserModule,
@@ -44,12 +48,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule
-    
   ],
-  providers: [UserService, LoginGuard, LogoutGuard, ApiService],
-  bootstrap: [AppComponent]
+  providers: [PartnerService, LoginGuard, LogoutGuard, ApiService, DomService, ModalService],
+  bootstrap: [AppComponent],
+  entryComponents: [StudentaddComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

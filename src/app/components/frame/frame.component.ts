@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { PartnerService } from 'src/app/services/partner.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
 })
 export class FrameComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private partnerService: PartnerService, private router: Router) { }
 
   ngOnInit() {
   }
 
   logout() {
-    this.userService.logout();
+    this.partnerService.logout();
     this.router.navigateByUrl("/login");
   }
 
